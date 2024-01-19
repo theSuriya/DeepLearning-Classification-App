@@ -1,0 +1,111 @@
+/* main.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/neurons.gif') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 600px;
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.3); /* Add a semi-transparent white background on top of the GIF */
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(15, 166, 185, 0.897);
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+}
+
+.model-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.model {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 25px;
+    border: px solid #c71919;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    backdrop-filter: blur(20px);
+}
+
+h2 {
+    color: #2bb1b6;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+p {
+    color: #f3f3f3;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #22b4ad;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+    transition: background-color 0.3s;
+}
+
+
+a:hover {
+    background-color:#009eb3;
+}
+
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .model {
+        width: 100%;
+    }
+    h1{
+       font-size:25px;
+    }
+
+   .container {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+          }
+
+    h2{
+      font-size:20px
+    }
+
+    p{
+     font-size:13px
+    }
+
+    .container {
+    max-width: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+     }
+
+    body {
+        background-size: cover; /* or 'contain' based on your preference */
+    }
+}

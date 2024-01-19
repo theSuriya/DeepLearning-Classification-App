@@ -1,0 +1,179 @@
+/* style.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('images/yoga-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    overflow-y: scroll;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0px);
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: ##f4d03f;/* Adjust the alpha value for transparency */
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid ##3498db;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0px);
+    margin: 20px auto 0
+}
+
+
+h1 {
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    color: rgba(19, 180, 153, 0.959);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+
+#fileInputContainer {
+    position: relative;
+    margin-bottom: 20px;
+
+
+}
+
+#fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    backdrop-filter: blur(0px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+#fileInputLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #c5d437;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#fileInputLabel:hover {
+    color: #297fb8;
+}
+
+#imagePreview {
+    max-width: 100%;
+    height: auto;
+    border: 0px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    backdrop-filter: blur(50px);
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+#imageContainer {
+    text-align: center;
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.upload-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.predict-btn {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Kanit', sans-serif;
+    background-color:rgb(12, 184, 161);
+    color:white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+#predictionResult {
+    color: white; /* Change the color to white */
+    margin-top: 20px;
+    text-align: center;
+    backdrop-filter: blur(0px);
+    font-weight: bold;
+    border: none;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: none;
+}
+.predict-btn:hover {
+    background-color: #33aa3d;
+    letter-spacing: 2px;
+    box-shadow: #33aa3d 0px 7px 29px 0px;
+}
+
+.predict-btn:active {
+    background-color:#33aa3d;
+    letter-spacing: 2px;
+    box-shadow: #33aa3d 0px 7px 29px 0px;
+    transform: translateY(10px);
+}
+.predict-btn:focus {
+    outline: none;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    h1{
+       font-size:25px;
+       font-family: 'Kanit', sans-serif;
+    }
+    #imagePreview {
+    max-width: 70%;
+    height: 60%;
+    border: 0px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    backdrop-filter: blur(50px);
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+}
+    body {
+        background-size: cover; /* or 'contain' based on your preference */
+    }
+}
