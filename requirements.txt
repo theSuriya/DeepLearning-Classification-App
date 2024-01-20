@@ -1,7 +1,7 @@
 numpy==1.24.3
 uvicorn==0.25.0
 fastapi==0.103.2
-gunicorn==21.3.0
+gunicorn
 Pillow==10.1.0
 jinja2
 python-multipart
