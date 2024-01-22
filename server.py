@@ -36,14 +36,6 @@ app.mount("/models/dog_breed/static", StaticFiles(directory='models/dog_breed/st
 templates = Jinja2Templates(directory="frontend")
 templates1 = Jinja2Templates(directory="models")
 
-#DL or Ml Models (Loading)..
-sports_ball_model = tf.keras.models.load_model('models/sports_ball/Sports_ball_prediction_v2.h5')
-# weather_model = tf.keras.models.load_model('models/weather/cards_model_v2.h5')
-# flower_model = tf.keras.models.load_model('models/flower/flower_prediction.h5')
-# yoga_pose_model = tf.keras.models.load_model('models/yoga_pose/yoga-modelv2.h5')
-# mammals_model = tf.keras.models.load_model('models/mammals/Mammals_predictionv1.h5')
-# dog_model = tf.keras.models.load_model("models/dog_breed/dog_breedv3.h5")
-
 #classes For All Models
 # yoga_class = ['Bridge Pose','Child-Pose','CobraPose',
 #                    'Downward Dog pose','Pigeon pose','Standing Mountain Pose',
@@ -190,11 +182,12 @@ def read_file_as_image(data):
 @app.post("/predict_sports_ball")
 async def predict_sports_ball(file: UploadFile = File(...)):
     print("Prediction endpoint called")
+    model = tf.keras.models.load_model('models/sports_ball/Sports_ball_prediction_v2.h5')
     file.file.seek(0)
     img = read_file_as_image(await file.read())
     img = np.expand_dims(img, axis=0)
 
-    predicted = sports_ball_model.predict(img)
+    predicted =  model.predict(img)
     result = sports_ball_class[np.argmax(predicted[0])]
     confidence = np.max(predicted[0])
 
@@ -206,11 +199,12 @@ async def predict_sports_ball(file: UploadFile = File(...)):
 @app.post("/predict_flower")
 async def predict_flower(file: UploadFile = File(...)):
     print("Prediction endpoint called")
+    model = tf.keras.models.load_model('models/flower/flower_prediction.h5')
     file.file.seek(0)
     img = read_file_as_image(await file.read())
     img = np.expand_dims(img, axis=0)
 
-    predicted = flower_model.predict(img)
+    predicted = model.predict(img)
     result = flower_class[np.argmax(predicted[0])]
     confidence = np.max(predicted[0])
 
@@ -224,11 +218,12 @@ async def predict_flower(file: UploadFile = File(...)):
 @app.post("/predict_dog")
 async def predict_dog(file: UploadFile = File(...)):
     print("Prediction endpoint called")
+    model = tf.keras.models.load_model("models/dog_breed/dog_breedv3.h5")
     file.file.seek(0)
     img = read_file_as_image(await file.read())
     img = np.expand_dims(img, axis=0)
 
-    predicted = dog_model.predict(img)
+    predicted = model.predict(img)
     result = dog_class[np.argmax(predicted[0])]
     confidence = np.max(predicted[0])
 
@@ -242,12 +237,13 @@ async def predict_dog(file: UploadFile = File(...)):
 # Endpoint for Weather Model
 @app.post("/predict_weather")
 async def weather(file: UploadFile = File(...)):
+    model = tf.keras.models.load_model('models/weather/cards_model_v2.h5')
     print("Prediction endpoint called")
     file.file.seek(0)
     img = read_file_as_image(await file.read())
     img = np.expand_dims(img, axis=0)
 
-    predicted = weather_model.predict(img)
+    predicted = model.predict(img)
     result = cards_class[np.argmax(predicted[0])]
     confidence = np.max(predicted[0])
 
@@ -261,11 +257,12 @@ async def weather(file: UploadFile = File(...)):
 @app.post("/predict_yoga_pose")
 async def predict_yoga_pose(file: UploadFile = File(...)):
         print("Prediction endpoint called")
+        model = tf.keras.models.load_model('models/yoga_pose/yoga-modelv2.h5')
         file.file.seek(0)
         img = read_file_as_image(await file.read())
         img = np.expand_dims(img, axis=0)
 
-        predicted = yoga_pose_model.predict(img)
+        predicted = model.predict(img)
         result = yoga_class[np.argmax(predicted[0])]
         confidence = np.max(predicted[0])
 
@@ -280,11 +277,12 @@ async def predict_yoga_pose(file: UploadFile = File(...)):
 @app.post("/predict_mammals")
 async def predict_mammals(file: UploadFile = File(...)):
     print("Prediction endpoint called")
+    model = tf.keras.models.load_model('models/mammals/Mammals_predictionv1.h5')
     file.file.seek(0)
     img = read_file_as_image(await file.read())
     img = np.expand_dims(img, axis=0)
 
-    predicted = mammals_model.predict(img)
+    predicted = model.predict(img)
     result = mammals_class[np.argmax(predicted[0])]
     confidence = np.max(predicted[0])
 
