@@ -38,16 +38,16 @@ templates1 = Jinja2Templates(directory="models")
 
 #DL or Ml Models (Loading)..
 sports_ball_model = tf.keras.models.load_model('models/sports_ball/Sports_ball_prediction_v2.h5')
-weather_model = tf.keras.models.load_model('models/weather/cards_model_v2.h5')
-flower_model = tf.keras.models.load_model('models/flower/flower_prediction.h5')
-yoga_pose_model = tf.keras.models.load_model('models/yoga_pose/yoga-modelv2.h5')
-mammals_model = tf.keras.models.load_model('models/mammals/Mammals_predictionv1.h5')
-dog_model = tf.keras.models.load_model("models/dog_breed/dog_breedv3.h5")
+# weather_model = tf.keras.models.load_model('models/weather/cards_model_v2.h5')
+# flower_model = tf.keras.models.load_model('models/flower/flower_prediction.h5')
+# yoga_pose_model = tf.keras.models.load_model('models/yoga_pose/yoga-modelv2.h5')
+# mammals_model = tf.keras.models.load_model('models/mammals/Mammals_predictionv1.h5')
+# dog_model = tf.keras.models.load_model("models/dog_breed/dog_breedv3.h5")
 
 #classes For All Models
-yoga_class = ['Bridge Pose','Child-Pose','CobraPose',
-                   'Downward Dog pose','Pigeon pose','Standing Mountain Pose',
-                   'Tree Pose','Triangle Pose','Warrior Pose']
+# yoga_class = ['Bridge Pose','Child-Pose','CobraPose',
+#                    'Downward Dog pose','Pigeon pose','Standing Mountain Pose',
+#                    'Tree Pose','Triangle Pose','Warrior Pose']
 
 sports_ball_class = ['american_football', 'baseball', 'basketball', 'billiard_ball', 'bowling_ball', 'cricket_ball',
                'football', 'golf_ball', 'hockey_ball', 'hockey_puck', 'rugby_ball', 'shuttlecock', 'table_tennis_ball',
